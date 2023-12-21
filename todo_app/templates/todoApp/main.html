@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>現在のToDo</title>
+</head>
+<body>
+    <p>メイン画面</p>
+    <ul>
+        {% for item in data %}
+        <li>
+            <p>Todo: {{ item.Todo }}</p>
+            <p>DeadLine: {{ item.DeadLine }}</p>
+            <form method="post" action="{% url 'todoApp:Delete' item.id %}">
+                {% csrf_token %}
+                <button>完了</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'todoApp:Input' %}">ToDoを作成する</a>
+</body>
+</html>
