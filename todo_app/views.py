@@ -6,7 +6,7 @@ from .models import TodoModel
 # Create your views here.
 class Main(View):
     def get(self, request):
-        data = TodoModel.objects.all()
+        data = TodoModel.objects.all().order_by('DeadLine')
         return render(request, "todoApp/main.html", {'data' : data})
 
 class DeleteItem(View):
