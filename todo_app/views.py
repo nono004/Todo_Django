@@ -7,28 +7,28 @@ from .models import TodoModel
 class Main(View):
     def get(self, request):
         data = TodoModel.objects.all().order_by('DeadLine')
-        return render(request, "todoApp/main.html", {'data' : data})
+        return render(request, "todo_app/main.html", {'data' : data})
 
 class DeleteItem(View):
     def post(self, request, item_id):
         item = TodoModel.objects.get(id=item_id)
         item.delete()
-        return redirect('/todoApp/')
+        return redirect('/todo_app/')
 
 class Input(View):
     def get(self, request):
         form = InputForm()
-        return render(request, "todoApp/input.html", {'form':form})
+        return render(request, "todo_app/input.html", {'form':form})
 
     def post(self, request):
         form = InputForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/todoApp/complete/')
+            return redirect('/todo_app/complete/')
         else:
             form = InputForm()
-        return render(request, 'todoApp/input.html', {'form':form})
+        return render(request, 'todo_app/input.html', {'form':form})
 
 class Complete(View):
     def get(self, request):
-        return render(request, "todoApp/complete.html")
+        return render(request, "todo_app/complete.html")

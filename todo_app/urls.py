@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import Main, Input, Complete, DeleteItem
 
-app_name = 'todoApp'
+app_name = 'todo_app'
 
 urlpatterns = [
     path("", Main.as_view(), name='Top'),
