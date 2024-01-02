@@ -9,17 +9,23 @@
 </head>
 <body>
     <p class = "Title">ToDoリスト</p>
+    <p>ToDo一覧</p>
     <div class = "Wrapper">
-        {% for item in data %}
-        <div class = "Card">
-            <p>ToDo: {{ item.Todo }}</p>
-            <p>締切: {{ item.DeadLine }}</p>
-            <form method="post" action="{% url 'todo_app:Delete' item.id %}">
-                {% csrf_token %}
-                <button>完了</button>
-            </form>
-        </div>
-        {% endfor %}
+        {% if data %}
+            {% for item in data %}
+            <div class = "Card">
+                <p class="ToDo">{{ item.Todo }}</p>
+                <p>締切: {{ item.DeadLine|date:"n月j日" }}</p>
+                <p>カテゴリ:{{ item.get_Category_display }}</p>
+                <form method="post" action="{% url 'todo_app:Delete' item.id %}">
+                    {% csrf_token %}
+                    <button>完了</button>
+                </form>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>ToDoはありません</p>
+        {% endif %}
     </div>
     <a href="{% url 'todo_app:Input' %}" class = "Link">ToDoを作成する</a>
 </body>

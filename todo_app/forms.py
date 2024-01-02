@@ -6,4 +6,4 @@ class InputForm(forms.ModelForm):
     #DeadLine = forms.DateField(widget=forms.DateInput(attrs={'type':'date', 'class':'date'}))
     class Meta:
         model = TodoModel
-        fields = ['Todo', 'DeadLine']
+        fields = ['Todo', 'DeadLine', 'Category']

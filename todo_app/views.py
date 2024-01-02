@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 from .forms import InputForm
 from .models import TodoModel
+import datetime
 
 # Create your views here.
 class Main(View):
