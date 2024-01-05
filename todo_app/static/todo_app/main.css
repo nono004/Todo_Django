@@ -1,7 +1,9 @@
 body{
-    background-color: #fefefe;
+    margin: 0; /* 余白をリセットして画面全体を占有する */
+    height: 100vh; /* 画面の高さいっぱいに広がるようにする */
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+    padding: 10px 50px;
 }
-
 .Title{
     text-align: center;
     font-size: 1.75rem;
@@ -20,7 +22,7 @@ body{
     text-align: center;
     border-radius: 10px;
     padding: 10px 5px;
-    max-width: 300px;
+    max-width: 500px;
     /*box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.3);*/
     box-shadow: 0 10px 20px #ccc;
 }
@@ -29,8 +31,30 @@ body{
     box-shadow: 0 10px 20px #999;
 }
 
+.Complete{
+    width: 100px;
+    font-size: 1.0rem;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.Complete:hover{
+    background-color: #fff;
+    color: #333;
+    border: solid 3px #333;
+}
+
 .ToDo{
     font-size: 1.5rem;
+}
+
+.footer{
+    display:flex;
+    justify-content: center;
 }
 
 .Link{
@@ -41,6 +65,13 @@ body{
     padding: 10px 10px;
     text-decoration: none;
     border-radius: 5px;
+    text-align: center;
+}
+
+.Link:hover{
+    background-color: #fff;
+    color: #333;
+    border: solid 3px #333;
 }
 
 

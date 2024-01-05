@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'todo_app/input.css' %}">
+    <title>ToDo追加ページ</title>
 </head>
 <body>
-    <p>インプット画面</p>
-    <form method = "post" action="{% url 'todo_app:Input' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">登録</button>
-    </form>
+    <p class="explain">ToDoを追加</p>
+    <div class = "main">
+        <form method = "post" action="{% url 'todo_app:Input' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="submit">登録</button>
+        </form>
+    </div>
     <a href="{% url 'todo_app:Top' %}">戻る</a>
 </body>
 </html>

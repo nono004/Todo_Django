@@ -1,0 +1,50 @@
+.explain{
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+.textarea{
+    padding: 5px 5px;
+    border-radius: 5px;
+    height: 50px;
+    font-size: 1rem;
+}
+
+.date{
+    padding: 5px 5px;
+    font-size: 1rem;
+}
+
+.Category{
+    padding: 5px 5px;
+    font-size: 1rem;
+}
+
+label{
+    font-size: 1.25rem;
+    margin-right: 5px;
+}
+.submit{
+    margin: 0;
+    width: 150px;
+    font-size: 1.25rem;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 150px;
+    margin-top: 30px;
+}
+
+.submit:hover{
+    background-color: #fff;
+    color: #333;
+    border: solid 3px #333;
+}

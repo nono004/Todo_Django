@@ -19,7 +19,7 @@
                 <p>カテゴリ:{{ item.get_Category_display }}</p>
                 <form method="post" action="{% url 'todo_app:Delete' item.id %}">
                     {% csrf_token %}
-                    <button>完了</button>
+                    <button class = "Complete">完了</button>
                 </form>
             </div>
             {% endfor %}
@@ -27,6 +27,8 @@
             <p>ToDoはありません</p>
         {% endif %}
     </div>
-    <a href="{% url 'todo_app:Input' %}" class = "Link">ToDoを作成する</a>
+    <div class = "footer">
+        <a href="{% url 'todo_app:Input' %}" class = "Link">ToDoを追加する</a>
+    </div>
 </body>
 </html>
