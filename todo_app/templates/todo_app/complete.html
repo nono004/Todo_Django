@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'todo_app/complete.css' %}">
     <title>ToDo登録完了</title>
 </head>
 <body>
-    <p>Todo登録が完了しました</p>
-    <a href="{% url 'todo_app:Top' %}">トップ画面へ</a>
+    <div class= "main">
+        <p class = "subTitle">Todo登録が完了しました</p>
+    </div>
+    <a href="{% url 'todo_app:Top' %}" class = "back">トップ画面へ</a>
 </body>
 </html>

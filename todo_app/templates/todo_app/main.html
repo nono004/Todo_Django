@@ -9,23 +9,32 @@
 </head>
 <body>
     <p class = "Title">ToDoリスト</p>
-    <p>ToDo一覧</p>
-    <div class = "Wrapper">
-        {% if data %}
-            {% for item in data %}
-            <div class = "Card">
-                <p class="ToDo">{{ item.Todo }}</p>
-                <p>締切: {{ item.DeadLine|date:"n月j日" }}</p>
-                <p>カテゴリ:{{ item.get_Category_display }}</p>
-                <form method="post" action="{% url 'todo_app:Delete' item.id %}">
-                    {% csrf_token %}
-                    <button class = "Complete">完了</button>
-                </form>
-            </div>
-            {% endfor %}
-        {% else %}
-            <p>ToDoはありません</p>
-        {% endif %}
+    <div class = "flex-box">
+        <div class = "left-container">
+
+        </div>
+        <div class = "main">
+            <ul class="stack01">
+                {% if data %}
+                    {% for item in data %}
+                    <li class = "Card">
+                        <p class="ToDo">{{ item.Todo }}</p>
+                        <p>締切: {{ item.DeadLine|date:"n月j日" }}</p>
+                        <p>カテゴリ:{{ item.get_Category_display }}</p>
+                        <form method="post" action="{% url 'todo_app:Delete' item.id %}">
+                            {% csrf_token %}
+                            <button class = "Complete">完了</button>
+                        </form>
+                    </li>
+                    {% endfor %}
+                {% else %}
+                    <p>ToDoはありません</p>
+                {% endif %}
+            </ul>
+        </div>
+        <div class = "right-container">
+
+        </div>
     </div>
     <div class = "footer">
         <a href="{% url 'todo_app:Input' %}" class = "Link">ToDoを追加する</a>
